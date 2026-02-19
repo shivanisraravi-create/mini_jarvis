@@ -12,11 +12,13 @@ TRIGGER_WORD_2 = "up"
 SAMPLE_RATE = 16000
 DURATION = 5  # seconds to listen
 
+engine = pyttsx3.init()
+engine.setProperty('rate', 170)
+
 def speak(text):
-    engine = pyttsx3.init()
     engine.say(text)
     engine.runAndWait()
-    engine.stop()
+
 
 def record_audio():
     print("Listening...")
